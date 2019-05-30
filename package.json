@@ -4,16 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "eslint": "eslint . --fix",
+    "pretest": "npm run lint && npm run docs",
+    "test": "nyc --reporter=html --reporter=text  ./node_modules/.bin/mocha",
+    "lint": "eslint ./src/*.js ./test/*.js",
     "docs": "./node_modules/.bin/jsdoc -c jsdoc.json",
-    "coverage": "nyc npm run test"
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "author": "Ajay Sahu",
   "license": "ISC",
   "devDependencies": {
     "better-docs": "^1.1.6",
     "chai": "^4.2.0",
+    "coveralls": "^3.0.3",
     "eslint": "^5.16.0",
     "eslint-config-google": "^0.13.0",
     "jsdoc": "^3.6.2",

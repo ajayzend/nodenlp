@@ -5,6 +5,7 @@ const app = require('../app');
 // Results
 sayHelloResult = app.sayHello();
 addNumbersResult = app.addNumbers(5, 5);
+factorialResult = app.fact(3);
 
 describe('app.js', function() {
   describe('sayHello()', function() {
@@ -27,6 +28,12 @@ describe('app.js', function() {
     it('addNumbers should return type number', function() {
       // let result = app.addNumbers(5,5);
       assert.typeOf(addNumbersResult, 'number');
+    });
+  });
+
+  describe('Check Factorial number', function() {
+    it('factorial value should be greater than 10', function() {
+      assert.isAbove(factorialResult, 5);
     });
   });
 });
