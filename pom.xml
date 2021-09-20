@@ -16,10 +16,7 @@
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
   </properties>
 
-  <modules>
-    <module>app</module>
-    <module>src</module>
-  </modules>
+ 
 
   <distributionManagement>
     <site>
